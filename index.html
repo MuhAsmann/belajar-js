@@ -7,31 +7,23 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Operator Perbandigan</h1>
+    <h1>Operator Logika</h1>
 
     <script>
       /*
-      > lebih dari
-      < kurang dari
-      >= lebih dari atau sama dengan
-      <= kurang dari atau sama dengan
-      == Sama dengan
-      === sama dengan dan sama tipe misal(string===string, let===let)
-      != tidak sama dengan
-      !== tidak sama dengan atau tidak sama tipe
+      && = dan
+      || = atau
+      ! = Kebalikan
       */
 
-      let result = 5 == "5";
-      document.writeln("<p>" + result + "</p>");
+      const nilaiUjian = 75;
+      const nilaiAbsensi = 90;
 
-      result = 5 === "5";
-      document.writeln("<p>" + result + "</p>");
+      const lulusUjian= nilaiUjian >= 75;
+      const lulusAbsensi = nilaiAbsensi >= 75;
 
-      result = 5 > 10;
-      document.writeln("<p>" + result + "</p>");
-
-      result = 5 < 10;
-      document.writeln("<p>" + result + "</p>");
+      const lulus = lulusUjian && lulusAbsensi;
+      document.writeln(lulus);
 
     </script>
 </body>
