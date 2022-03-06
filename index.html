@@ -7,26 +7,30 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Operator unary</h1>
+    <h1>Operator Perbandigan</h1>
 
     <script>
       /*
-      + menandakan nilai positif
-      - menandakan nilai negatif
-      ++ menandakan increment, menaikan 1 angka
-      -- menandakan dectement, menurunkan 1 angka
+      > lebih dari
+      < kurang dari
+      >= lebih dari atau sama dengan
+      <= kurang dari atau sama dengan
+      == Sama dengan
+      === sama dengan dan sama tipe misal(string===string, let===let)
+      != tidak sama dengan
+      !== tidak sama dengan atau tidak sama tipe
       */
 
-      let result = +1;
+      let result = 5 == "5";
       document.writeln("<p>" + result + "</p>");
 
-      result--; //result = result - 1; result -= 1;
+      result = 5 === "5";
       document.writeln("<p>" + result + "</p>");
 
-      result++;
+      result = 5 > 10;
       document.writeln("<p>" + result + "</p>");
 
-      result = -result;
+      result = 5 < 10;
       document.writeln("<p>" + result + "</p>");
 
     </script>
