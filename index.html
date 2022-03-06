@@ -7,24 +7,28 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Belajar Variable JS</h1>
+    <h1>Operator matematika</h1>
 
     <script>
-        // deklarasi variable
-        let fullName;
-        fullName = "Asman";
-        document.writeln(fullName);
-        document.write("</br>");
+        /*
+        - = pengurangan
+        * = perkalian
+        + = pertambahan
+        ** = eksponensial (atau pangkat)
+        / = pembagian
+        % = modulo (atau sisa bagi)
+        */
 
-        // deklarasi variable + value
-        let middleName = "Asriani";
-        document.writeln(middleName);
-        document.write("</br>");
+        let result= 1 + 2 ;
+        document.write("<p>1 + 2 = " + result + "</p>");
+        let origialResult = result;
 
-        // const tidak bisa dirubah karna bernilai konstant
-        const cobaConstant = "value konstan";
-        document.writeln(cobaConstant);
-        // cobaConstant = 1000;
+        result = result - 1;
+        document.write("<p>" + origialResult + " -1 = " + result + "</p>");
+        origialResult = result;
+
+        result = result * 2;
+        document.write("<p>" + origialResult + " * 2 = " + result + "</p>");
     </script>
 </body>
 </html>
