@@ -7,29 +7,27 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Operator augmanted asignment</h1>
+    <h1>Operator unary</h1>
 
     <script>
-        /*
-        - = pengurangan
-        * = perkalian
-        + = pertambahan
-        ** = eksponensial (atau pangkat)
-        / = pembagian
-        % = modulo (atau sisa bagi)
-        */
+      /*
+      + menandakan nilai positif
+      - menandakan nilai negatif
+      ++ menandakan increment, menaikan 1 angka
+      -- menandakan dectement, menurunkan 1 angka
+      */
 
-        let result= 1 + 2 ;
-        document.write("<p>1 + 2 = " + result + "</p>");
-        let origialResult = result;
+      let result = +1;
+      document.writeln("<p>" + result + "</p>");
 
-        result -= 1;
-        document.write("<p>" + origialResult + " -1 = " + result + "</p>");
-        origialResult = result;
+      result--; //result = result - 1; result -= 1;
+      document.writeln("<p>" + result + "</p>");
 
-        result *= 2;
-        document.write("<p>" + origialResult + " * 2 = " + result + "</p>");
+      result++;
+      document.writeln("<p>" + result + "</p>");
 
+      result = -result;
+      document.writeln("<p>" + result + "</p>");
 
     </script>
 </body>
