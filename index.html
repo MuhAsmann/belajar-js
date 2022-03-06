@@ -7,16 +7,25 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Console</h1>
+    <h1>String Tamplate</h1>
 
     <script>
-      console.debug("ini Debug")
 
-      console.info("Hello World");
+      const name = "Muhammad Asman";
+      const istri = "asriani";
+      // const tamplate = `Name : ${name} Istri : ${istri}`;
 
-      console.warn("ini adalah peringatan");
 
-      console.error("ini adalah eror");
+      const nama = "Muhammad Asman";
+      const umur = 20;
+
+      const tamplate = `
+      Nama : ${nama} 
+      Nikah : ${umur > 17}
+      `;
+
+      console.info(tamplate);
+
     </script>
 </body>
 </html>
