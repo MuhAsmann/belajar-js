@@ -7,25 +7,49 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>String Tamplate</h1>
+    <h1>Konversi String</h1>
 
     <script>
 
-      const name = "Muhammad Asman";
-      const istri = "asriani";
-      // const tamplate = `Name : ${name} Istri : ${istri}`;
+     /*
+     function()
 
+     perseInt() = mengkonfersi dari string ke number (bilangan bulat)
+     perseFloat() = mengkonfersi dari string ke number (bilangan pecahan)
+     Number() = Mengkonversi dari string ke number (bilangan bulat ataupun pecahan)
+     number.toString() = mengkonversi dari number ke string
+     */
 
-      const nama = "Muhammad Asman";
-      const umur = 20;
+     const value1 = parseInt("1");
+     const value2 = 1;
+     const sum = value1 + value2;
 
-      const tamplate = `
-      Nama : ${nama} 
-      Nikah : ${umur > 17}
-      `;
+     document.writeln(`<h1>${sum}</h1>`);
 
-      console.info(tamplate);
+     document.writeln(`<h2>${parseInt("1.1")}</h2>`);
+     document.writeln(`<h2>${parseFloat("1.1")}</h2>`);
+     document.writeln(`<h2>${Number("1.1")}</h2>`);
 
+     const a = 1;
+     const b = 1;
+     const tambah = a.toString() + b.toString();
+
+     document.writeln(`<h1>${tambah}</h1>`);
+
+     document.writeln(`<h2>${parseInt("as1.1")}</h2>`);
+     document.writeln(`<h2>${parseInt("1.1as")}</h2>`);
+     document.writeln(`<h2>${parseFloat("1.1as")}</h2>`);
+     document.writeln(`<h2>${parseFloat("as1.1")}</h2>`);
+
+     document.writeln(`<h2>${Number("1.1as")}</h2>`);
+     document.writeln(`<h2>${Number("as1.1")}</h2>`);
+
+     const first = Number("salah");
+     const total = first + 100;
+     document.writeln(`<h2>${total}</h2>`);
+
+     document.writeln(`<h2>${isNaN(first)}</h2>`);
+     document.writeln(`<h2>${isNaN(100)}</h2>`);
     </script>
 </body>
 </html>
