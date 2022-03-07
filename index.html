@@ -25,6 +25,7 @@
 
      document.writeln(arrayNama);
 
+     //menambahkan data pada array
      const nama = [];
      nama.push("asman");
      nama.push("&","Muhammad");
@@ -32,18 +33,22 @@
 
      console.table(nama);
 
+     //mendapat data diposisi index
      console.info(nama[1]);
      console.info(nama[2]);
      console.info(nama[4]);
 
+     //mengganti value array
      nama[0] = "nama";
 
      console.table(nama);
-
+    
+     //menghapus array, dan tidak berpengaruh pada index, dengan kata lain index akan di hilangkan dari tampilan tanpa merubah posisi index
      delete nama[1];
 
      console.table(nama);
 
+     //memasukan data walaupun sudah dihapus namun dengan perintah mengganti value array
      nama[1] = "setelah dihapus, dimasukan lagi";
      nama.push(["muhammad","asman"]); //array dalam array
      console.table(nama);
