@@ -7,40 +7,22 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Tipe Data Object</h1>
+    <h1>If Expresion</h1>
 
     <script>
 
      /*
     
      */
-    //membuat tipe data object menggunakan kurung {}
-     const orang = {};
-    // untuk memasukan data kedala objec = variable["atribut/property"] = "";
-     orang["nama"] = "Muhammad Asman";
-     orang["alamat"] = "Indonesia";
-     orang["umur"] = 20;
-
-     //menampilkan data dalam bentuk table
-     console.table(orang);
-
-     delete orang["umur"];
-
-     console.table(orang);
-
-     //membuat serta mengisi data langsung didalam object nya sama seperti array
-     const person = {
-        nama: "Muhammad Asman",
-        "alamat tinggal" : "indonesia", //kalau ada spasi pada atribut gunakan ""
-        umur : 30
-    };
-
-     //mengambil/menampilkan data ${variable.namaProperti}
-     console.info(`nama : ${person.nama}`);
-     console.info(`alamat : ${person["alamat tinggal"]}`);
-
-     
-     console.table(person);
+    const examValue = 20;
+    if (examValue > 75){
+        document.writeln(`<h1>Anda Lulus</h1> <h2>nilai anda : ${examValue}</h2> `);
+    } else if (examValue == 75){
+        document.writeln(`<h1>Anda Lulus Dengan Nilai Standar</h1> <h2>nilai anda : ${examValue}</h2> `);
+    }
+    else{
+        document.writeln(`<h1>Anda Gagal</h1> <h2>nilai anda : ${examValue}</h2>`);
+    }
     </script>
 </body>
 </html>
