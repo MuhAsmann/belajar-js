@@ -7,16 +7,23 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Pop up alert</h1>
+    <h1>Pop up confirm</h1>
 
     <script>
 
      /*
     
      */
-     const name = prompt("siapa nama anda ?");
+    //confirm
+     const masuk = confirm("anda yakin mau masuk..?");
 
-     alert(`Hello ${name}`);
+     if (masuk){
+         //menggunakan prompt untuk mengambil inputan user
+         const nama = prompt("siapa nama anda ?");
+         alert(`Hello ${nama}`);
+     }else{
+         alert("Daaahh");
+     }
 
     
 
