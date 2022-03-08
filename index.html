@@ -7,53 +7,40 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Array</h1>
+    <h1>Tipe Data Object</h1>
 
     <script>
 
      /*
-     array.push(value); = menambah data array
-     array.length; = untuk mendapatkan panjang array
-     array[index]; = mendapat data di posisi index
-     array[index] = value; = mengubah data di posisi index
-     delete array[index]; = menghapus data di posisi index namun index tidak bergeser 
-     */
-
-     let arrayKosong = [];
-
-     let arrayNama =["Muhammad" , "Asman" , "S.kom"];
-
-     document.writeln(arrayNama);
-
-     //menambahkan data pada array
-     const nama = [];
-     nama.push("asman");
-     nama.push("&","Muhammad");
-     nama.push("asriani","istri","asman yah")
-
-     console.table(nama);
-
-     //mendapat data diposisi index
-     console.info(nama[1]);
-     console.info(nama[2]);
-     console.info(nama[4]);
-
-     //mengganti value array
-     nama[0] = "nama";
-
-     console.table(nama);
     
-     //menghapus array, dan tidak berpengaruh pada index, dengan kata lain index akan di hilangkan dari tampilan tanpa merubah posisi index
-     delete nama[1];
+     */
+    //membuat tipe data object menggunakan kurung {}
+     const orang = {};
+    // untuk memasukan data kedala objec = variable["atribut/property"] = "";
+     orang["nama"] = "Muhammad Asman";
+     orang["alamat"] = "Indonesia";
+     orang["umur"] = 20;
 
-     console.table(nama);
+     //menampilkan data dalam bentuk table
+     console.table(orang);
 
-     //memasukan data walaupun sudah dihapus namun dengan perintah mengganti value array
-     nama[1] = "setelah dihapus, dimasukan lagi";
-     nama.push(["muhammad","asman"]); //array dalam array
-     console.table(nama);
+     delete orang["umur"];
+
+     console.table(orang);
+
+     //membuat serta mengisi data langsung didalam object nya sama seperti array
+     const person = {
+        nama: "Muhammad Asman",
+        "alamat tinggal" : "indonesia", //kalau ada spasi pada atribut gunakan ""
+        umur : 30
+    };
+
+     //mengambil/menampilkan data ${variable.namaProperti}
+     console.info(`nama : ${person.nama}`);
+     console.info(`alamat : ${person["alamat tinggal"]}`);
 
      
+     console.table(person);
     </script>
 </body>
 </html>
