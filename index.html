@@ -7,22 +7,38 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Pop up confirm</h1>
+    <h1>Undefined</h1>
 
     <script>
 
      /*
-    
+        undefied adalah sebuah kata kunci di javascript
+        adalah sebuah tipe data
      */
-    //confirm
-     const masuk = confirm("anda yakin mau masuk..?");
+     let nama = 1;
 
-     if (masuk){
-         //menggunakan prompt untuk mengambil inputan user
-         const nama = prompt("siapa nama anda ?");
-         alert(`Hello ${nama}`);
+     if (nama === undefined){
+         console.info("undefined");
      }else{
-         alert("Daaahh");
+         console.info("defined");
+     }
+
+     const nama2 = ["Muhamamd","Asman"];
+     //mengambil array indeks ke-2
+     if (nama2[2] === undefined){
+         console.info("Array Undifined");
+     }else{
+         console.info("Array Defined");
+     }
+
+     //object{} property
+     const orang ={
+        nama : "muhamamd asman",
+     };
+     if(orang.nama === undefined){
+         console.info("Object Undifined");
+     }else{
+         console.info("Object Defined");
      }
 
     
