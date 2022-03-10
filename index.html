@@ -7,43 +7,24 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Undefined</h1>
+    <h1>Null</h1>
 
     <script>
 
      /*
-        undefied adalah sebuah kata kunci di javascript
-        adalah sebuah tipe data
+       
      */
-     let nama = 1;
+     let nama = null;
 
-     if (nama === undefined){
-         console.info("undefined");
+     if(nama === undefined){
+         console.info("Undefined");
+     }else if(nama === null){
+         console.info("Null");
      }else{
-         console.info("defined");
-     }
-
-     const nama2 = ["Muhamamd","Asman"];
-     //mengambil array indeks ke-2
-     if (nama2[2] === undefined){
-         console.info("Array Undifined");
-     }else{
-         console.info("Array Defined");
-     }
-
-     //object{} property
-     const orang ={
-        nama : "muhamamd asman",
-     };
-     if(orang.nama === undefined){
-         console.info("Object Undifined");
-     }else{
-         console.info("Object Defined");
+         console.info(nama);
      }
 
     
-
-
     </script>
 </body>
 </html>
