@@ -7,40 +7,19 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Switch statement</h1>
+    <h1>Operator typeOf</h1>
 
     <script>
 
      /*
-       kondisi di switch hanya ==
+       Untuk mengetahui atau mengecek tipe data sebuah variable
      */
-     const nilai = "";
+     
+     let data = 100;
 
-     switch (nilai){
-         case "A":
-             console.info(`Anda Lulus Dengan baik Nilai = ${nilai}`);
-             break;//gunakan break agar program selesai atau berhenti eksekusi
-         case "B":
-         case "C":
-             console.info(`Anda Lulus Nilai = ${nilai}`);
-             break;
-         case "D":
-             console.info(`Anda Tidak Lulus Nilai = ${nilai}`);
-             break;
-         default://else jika di if statement
-             console.info("Nilai Anda Kosong");
-     }
+     const typeData = typeof data;
+     console.info(`${typeData}`);
 
-     //Jika menggunakan dalam bentuk if statement
-     if (nilai === "A"){
-        console.info(`Anda Lulus Dengan baik Nilai = ${nilai}`);
-     }else if(nilai === "B" || nilai === "C"){
-        console.info(`Anda Lulus Nilai = ${nilai}`);
-     }else if(nilai === "D"){
-        console.info(`Anda Tidak Lulus Nilai = ${nilai}`);
-     }else{
-        console.info("Nilai Anda Kosong");
-     }
     </script>
 </body>
 </html>
