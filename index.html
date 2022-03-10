@@ -7,18 +7,33 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Operator typeOf</h1>
+    <h1>In Operator</h1>
 
     <script>
 
      /*
-       Untuk mengetahui atau mengecek tipe data sebuah variable
+       operator yang bisa mengecek apakah sebuah property ada didalam object atau tidak
+       jika properti ada di object = true jika tidak = false
+       juga bisa mengecek index di Array
+
+       in operator hanya akan mengecek apakah sebuah property atau index ADA atau TIDAK
+       in tidak akan mengecek value(nilai atau isi) jadi walaupun nilai property 
      */
      
-     let data = 100;
+     const data = {
+        firstName : "Muhamamd",
+        lastName : "Asman",
+     }
 
-     const typeData = typeof data;
-     console.info(`${typeData}`);
+     const hasil = "firstName" in data; //true
+     console.info(`${hasil}`);
+
+        //contoh lain
+     if ("firstName" in data){
+         console.info(`Hallo ${data.firstName}`);
+     }else{
+         console.info("hallo");
+     }
 
     </script>
 </body>
