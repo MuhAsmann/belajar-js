@@ -7,24 +7,40 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Null</h1>
+    <h1>Switch statement</h1>
 
     <script>
 
      /*
-       
+       kondisi di switch hanya ==
      */
-     let nama = null;
+     const nilai = "";
 
-     if(nama === undefined){
-         console.info("Undefined");
-     }else if(nama === null){
-         console.info("Null");
-     }else{
-         console.info(nama);
+     switch (nilai){
+         case "A":
+             console.info(`Anda Lulus Dengan baik Nilai = ${nilai}`);
+             break;//gunakan break agar program selesai atau berhenti eksekusi
+         case "B":
+         case "C":
+             console.info(`Anda Lulus Nilai = ${nilai}`);
+             break;
+         case "D":
+             console.info(`Anda Tidak Lulus Nilai = ${nilai}`);
+             break;
+         default://else jika di if statement
+             console.info("Nilai Anda Kosong");
      }
 
-    
+     //Jika menggunakan dalam bentuk if statement
+     if (nilai === "A"){
+        console.info(`Anda Lulus Dengan baik Nilai = ${nilai}`);
+     }else if(nilai === "B" || nilai === "C"){
+        console.info(`Anda Lulus Nilai = ${nilai}`);
+     }else if(nilai === "D"){
+        console.info(`Anda Tidak Lulus Nilai = ${nilai}`);
+     }else{
+        console.info("Nilai Anda Kosong");
+     }
     </script>
 </body>
 </html>
