@@ -7,45 +7,22 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>For Loop</h1>
+    <h1>While Loop</h1>
 
     <script>
 
      /*
-        Blok kode yang terdapat didalam for akan selalu diulangi selama kondisi for terpenuhi
-
-        for(init statement; kondisi; post statement){
-            block perulangannya
-        }
-        1.init statement akan dieksekusi hanya sekali di awal sebelum perulangan
-        2.kondisi akan dilakukan pengecekan dalan setiap perulangan, jika true perulangan akan dilakukan, jika false perulangan akan terhenti
-        3. post statement akan dieksekusi setiap kali diakhir perulangan
-        4. init statement,kondisi dan post tidak wajib disi, berarti kondisi selalu bernilai true
+        1.while loop adalah versi perulangan yang lebih sederhana dibandingkan for loop
+        2.Di while loop hanya terdapat kondisi perulangan, tanpa ada init statement dan post statement
      */
 
-    
-    //  for(;;){
-    //      alert("hallo");
-    //  }
+     let counter =1;
 
-     //contoh pertama
-    //  let counter = 1;
-    //  for(;counter<=10;){
-    //      document.writeln(`<p>Perlulangan ke ${counter}</p>`);
-    //      counter++;
-    //  }
-
-      //contoh Kedua, memasukan variable di dalam init statment
-    //  for( let counter = 1;counter<=10;){
-    //      document.writeln(`<p>Perlulangan ke ${counter}</p>`);
-    //      counter++;
-    //  }
-
-     //contoh ketiga, memasukan  counter++ atau increment kedalam post statement
-     for( let counter = 1; counter<=10; counter++){
-         document.writeln(`<p>Perlulangan ke ${counter}</p>`);
+     while(counter <=10 ){
+         document.writeln(`<p>Perulangan Ke ${counter}</p>`);
+         counter++;
      }
-     
+    
     </script>
 </body>
 </html>
