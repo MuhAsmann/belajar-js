@@ -7,31 +7,31 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Ternary Operator</h1>
+    <h1>Nullish Coalescing Operator</h1>
 
     <script>
 
      /*
-        ternary operator adalah operator sederhana dari if statement
-        jika true nilai pertama yang akan diambil, jika false nilai kedua diambil
+        nullist value adalah null dan undefined
+        nulis coalescing operator (??) adalah operator mirip dengan ternary operator, yang membedakan adalah pada kondisi
+        ,jika bernilai null atau undefined, baru value default nya diambil
      */
      
-     
-     const nilai = 75;
-     let ucapan;
+     let parameter;
 
-     //jika menggunakan if statement
-     if(nilai >= 75){
-         ucapan = `Selamat Anda lulus Dengan Nilai :${nilai}`; //memasukan value kedalam variable ucapan ketika keadaan terpenuhi
-     }else{
-         ucapan = "Silahkan Coba Lagi"; 
+     let data = parameter
+
+     if(data === undefined || data === null){
+         data = "Nilai Default";
      }
 
-     document.writeln(`<p>${ucapan}</p>`);
+     document.writeln(`<p>${data}</p>`);
 
-     //Ternary Operator
-     ucapan = nilai >= 75 ? `Selamat Anda Lulus Nilai :${nilai}` : "Silahkan coba Lagi";
-     document.writeln(`<p>${ucapan}</p>`);
+     //operator nullish
+     data = parameter ?? "Nilai Default"; //berbeda dengan ternary yang menggunakan satu simbol ?
+     document.writeln(`<p>${data}</p>`);
+
+    
      
     </script>
 </body>
