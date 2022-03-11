@@ -7,45 +7,45 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Operator Logika Di Non Boolean</h1>
+    <h1>For Loop</h1>
 
     <script>
 
      /*
-        1.operator logika or(||), membaca dari kiri ke kanan.
-        2.operator ini akan mengambil nilai pertama yang truthy
-        3.jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan diambil
+        Blok kode yang terdapat didalam for akan selalu diulangi selama kondisi for terpenuhi
 
-        1.-------sama diatas
-        2.operator logika and(&&) akan mengambil nilai pertama yang falsy
-        3.-------sama diatas
+        for(init statement; kondisi; post statement){
+            block perulangannya
+        }
+        1.init statement akan dieksekusi hanya sekali di awal sebelum perulangan
+        2.kondisi akan dilakukan pengecekan dalan setiap perulangan, jika true perulangan akan dilakukan, jika false perulangan akan terhenti
+        3. post statement akan dieksekusi setiap kali diakhir perulangan
+        4. init statement,kondisi dan post tidak wajib disi, berarti kondisi selalu bernilai true
      */
 
     
-     console.info("Hello" || "");//hello
-     console.info("" || []);//array
-     console.info("0" || "NOL");//0 karna diambil dari kanan walaupun kedua truthy
-     console.info( 0 || "NOL");//NOL
-     console.info( null || "NULL");//NULL
-     console.info( undefined || "UNDIFENED");//UNDIFINED
-     console.info( 0 || false);//false karna kalau kedua falsy yang diambil yang terakhir
+    //  for(;;){
+    //      alert("hallo");
+    //  }
 
-     //contoh penerapan
-     const person ={
-        firstName:"Muhamamd",
-        lastName:"Asman"
-     };
-     const name = person.firstName || person.lastName;
-     console.info(name); // muhammad, karna data yang pertama truty walaupun yang setelahnya juga truty
+     //contoh pertama
+    //  let counter = 1;
+    //  for(;counter<=10;){
+    //      document.writeln(`<p>Perlulangan ke ${counter}</p>`);
+    //      counter++;
+    //  }
 
-     console.info("=========AND=========")
-     console.info("Hai" && "");//kosong
-     console.info("" && []);//kosong
-     console.info("0" && "NOL");//nol karna keduanya truty jadi diambil yang terakhir
-     console.info( 0 && "NOL");//0
-     console.info( null && "NULL");//null
-     console.info( undefined && "UNDIFENED");//undifined
-     console.info( 0 && false);//0 diambil yang terakhir
+      //contoh Kedua, memasukan variable di dalam init statment
+    //  for( let counter = 1;counter<=10;){
+    //      document.writeln(`<p>Perlulangan ke ${counter}</p>`);
+    //      counter++;
+    //  }
+
+     //contoh ketiga, memasukan  counter++ atau increment kedalam post statement
+     for( let counter = 1; counter<=10; counter++){
+         document.writeln(`<p>Perlulangan ke ${counter}</p>`);
+     }
+     
     </script>
 </body>
 </html>
