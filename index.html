@@ -7,49 +7,32 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Optional Chaining</h1>
+    <h1>Falsy & Truty</h1>
 
     <script>
 
      /*
-        optional chaining operator (?) merupakan operator yanng digunakan untuk
-        mengamankan ketika kita ingin mengakses property sebeuah obeject dari data nullish
+       falsy atau kadang ditulis falsey, adalah value yang ketika dalam konteks bolean, dia dianggap false
 
-        jika kita mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan
-        optional chaining operator, maka akan terjadi eror
+       truty kebalikan dari false
+
+       false dianggap false
+       0,-0 number dianggap false
+       "",'',`` semua string kosong dianggap false
+       null dianggap false
+       undefined dianggap false
+       NaN dianggap false
      */
 
-     
-     const person = {};
+     let data;
 
-     //contoh eror
-    //  const country = person.addres.country;
-
-     let country;
-
-     //agar tidak eror menggunakan percabangan if namun terlalu panjang
-     if(person.addres !== undefined && person.addres !== null){
-         country = person.name.country;
+     //data nya ada atau truty
+     if(data){
+         document.writeln("<p>True</p>");
+     }else{//datanya tidak ada atau falsy
+         document.writeln("<p>False</p>");
      }
-     document.writeln(`<p>Cek</p>`);
-     document.writeln(`<p>${country}</p>`);
-
-     //optional chaining, lebih simple dibandingkan if statement tadi
-     const orang = {
-         alamat:{
-             kota:"Yogyakarta"
-         }
-     };
-
-     let kota = orang?.alamat?.kota;//letak opsional chaining
-     document.writeln(`<p>Cek</p>`);
-     document.writeln(`<p>${kota}</p>`)
      
-     
-     
-     
-     
-    
     </script>
 </body>
 </html>
