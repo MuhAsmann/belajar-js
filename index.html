@@ -35,6 +35,24 @@
          console.info("hallo");
      }
 
+
+     //yang harus diperhatikan dalam in operator hanya mengecek properti ada atau tidak, bukan ngecek value nya
+     const student = {
+         firstName:"Muhammad",
+         middleName: undefined,
+         lastName: "Asman"
+     }
+
+     if ("middleName" in student){
+         console.info(`Hello ${student.middleName}`);
+     }else{
+         console.info("Hello")
+     }
+
+     //contoh lain
+     const name =[null, "Muhammad", null];
+     const result = 0 in name; //mengecek index ke 0 apakah ada apa tidak
+     console.info(result);//true
     </script>
 </body>
 </html>
