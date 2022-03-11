@@ -7,32 +7,45 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Falsy & Truty</h1>
+    <h1>Operator Logika Di Non Boolean</h1>
 
     <script>
 
      /*
-       falsy atau kadang ditulis falsey, adalah value yang ketika dalam konteks bolean, dia dianggap false
+        1.operator logika or(||), membaca dari kiri ke kanan.
+        2.operator ini akan mengambil nilai pertama yang truthy
+        3.jika tidak ada satupun yang bernilai truthy, maka yang terakhir yang akan diambil
 
-       truty kebalikan dari false
-
-       false dianggap false
-       0,-0 number dianggap false
-       "",'',`` semua string kosong dianggap false
-       null dianggap false
-       undefined dianggap false
-       NaN dianggap false
+        1.-------sama diatas
+        2.operator logika and(&&) akan mengambil nilai pertama yang falsy
+        3.-------sama diatas
      */
 
-     let data;
+    
+     console.info("Hello" || "");//hello
+     console.info("" || []);//array
+     console.info("0" || "NOL");//0 karna diambil dari kanan walaupun kedua truthy
+     console.info( 0 || "NOL");//NOL
+     console.info( null || "NULL");//NULL
+     console.info( undefined || "UNDIFENED");//UNDIFINED
+     console.info( 0 || false);//false karna kalau kedua falsy yang diambil yang terakhir
 
-     //data nya ada atau truty
-     if(data){
-         document.writeln("<p>True</p>");
-     }else{//datanya tidak ada atau falsy
-         document.writeln("<p>False</p>");
-     }
-     
+     //contoh penerapan
+     const person ={
+        firstName:"Muhamamd",
+        lastName:"Asman"
+     };
+     const name = person.firstName || person.lastName;
+     console.info(name); // muhammad, karna data yang pertama truty walaupun yang setelahnya juga truty
+
+     console.info("=========AND=========")
+     console.info("Hai" && "");//kosong
+     console.info("" && []);//kosong
+     console.info("0" && "NOL");//nol karna keduanya truty jadi diambil yang terakhir
+     console.info( 0 && "NOL");//0
+     console.info( null && "NULL");//null
+     console.info( undefined && "UNDIFENED");//undifined
+     console.info( 0 && false);//0 diambil yang terakhir
     </script>
 </body>
 </html>
