@@ -7,52 +7,32 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>In Operator</h1>
+    <h1>Ternary Operator</h1>
 
     <script>
 
      /*
-       operator yang bisa mengecek apakah sebuah property ada didalam object atau tidak
-       jika properti ada di object = true jika tidak = false
-       juga bisa mengecek index di Array
-
-       in operator hanya akan mengecek apakah sebuah property atau index ADA atau TIDAK
-       in tidak akan mengecek value(nilai atau isi) jadi walaupun nilai property 
+        ternary operator adalah operator sederhana dari if statement
+        jika true nilai pertama yang akan diambil, jika false nilai kedua diambil
      */
      
-     const data = {
-        firstName : "Muhamamd",
-        lastName : "Asman",
-     }
+     
+     const nilai = 75;
+     let ucapan;
 
-     const hasil = "firstName" in data; //true
-     console.info(`${hasil}`);
-
-        //contoh lain
-     if ("firstName" in data){
-         console.info(`Hallo ${data.firstName}`);
+     //jika menggunakan if statement
+     if(nilai >= 75){
+         ucapan = `Selamat Anda lulus Dengan Nilai :${nilai}`; //memasukan value kedalam variable ucapan ketika keadaan terpenuhi
      }else{
-         console.info("hallo");
+         ucapan = "Silahkan Coba Lagi"; 
      }
 
+     document.writeln(`<p>${ucapan}</p>`);
 
-     //yang harus diperhatikan dalam in operator hanya mengecek properti ada atau tidak, bukan ngecek value nya
-     const student = {
-         firstName:"Muhammad",
-         middleName: undefined,
-         lastName: "Asman"
-     }
-
-     if ("middleName" in student){
-         console.info(`Hello ${student.middleName}`);
-     }else{
-         console.info("Hello")
-     }
-
-     //contoh lain
-     const name =[null, "Muhammad", null];
-     const result = 0 in name; //mengecek index ke 0 apakah ada apa tidak
-     console.info(result);//true
+     //Ternary Operator
+     ucapan = nilai >= 75 ? `Selamat Anda Lulus Nilai :${nilai}` : "Silahkan coba Lagi";
+     document.writeln(`<p>${ucapan}</p>`);
+     
     </script>
 </body>
 </html>
