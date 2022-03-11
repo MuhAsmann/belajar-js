@@ -7,32 +7,49 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Nullish Coalescing Operator</h1>
+    <h1>Optional Chaining</h1>
 
     <script>
 
      /*
-        nullist value adalah null dan undefined
-        nulis coalescing operator (??) adalah operator mirip dengan ternary operator, yang membedakan adalah pada kondisi
-        ,jika bernilai null atau undefined, baru value default nya diambil
+        optional chaining operator (?) merupakan operator yanng digunakan untuk
+        mengamankan ketika kita ingin mengakses property sebeuah obeject dari data nullish
+
+        jika kita mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan
+        optional chaining operator, maka akan terjadi eror
      */
+
      
-     let parameter;
+     const person = {};
 
-     let data = parameter
+     //contoh eror
+    //  const country = person.addres.country;
 
-     if(data === undefined || data === null){
-         data = "Nilai Default";
+     let country;
+
+     //agar tidak eror menggunakan percabangan if namun terlalu panjang
+     if(person.addres !== undefined && person.addres !== null){
+         country = person.name.country;
      }
+     document.writeln(`<p>Cek</p>`);
+     document.writeln(`<p>${country}</p>`);
 
-     document.writeln(`<p>${data}</p>`);
+     //optional chaining, lebih simple dibandingkan if statement tadi
+     const orang = {
+         alamat:{
+             kota:"Yogyakarta"
+         }
+     };
 
-     //operator nullish
-     data = parameter ?? "Nilai Default"; //berbeda dengan ternary yang menggunakan satu simbol ?
-     document.writeln(`<p>${data}</p>`);
-
-    
+     let kota = orang?.alamat?.kota;//letak opsional chaining
+     document.writeln(`<p>Cek</p>`);
+     document.writeln(`<p>${kota}</p>`)
      
+     
+     
+     
+     
+    
     </script>
 </body>
 </html>
