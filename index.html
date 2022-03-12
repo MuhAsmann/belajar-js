@@ -7,7 +7,7 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Break</h1>
+    <h1>Continue</h1>
 
     <script>
 
@@ -17,14 +17,11 @@
         3. namun berbeda dengan continue, continue digunakan untuk menghentikan perlungan saat ini, lalu melanjutkan ke perulangan selanjutnya
      */
 
-     let counter = 1;
-     while(true){
-         document.writeln(`<p>Perulangan Ke-${counter}</p>`);
-         counter++;
-
-         if (counter > 10){
-             break;
+     for(let i = 1; i<=100; i++){
+         if(i % 2 === 0){
+             continue;
          }
+         document.writeln(`<p>Perulangan Ganjil ke-${i}</p>`);
      }
     
     </script>
