@@ -7,21 +7,23 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>While Loop</h1>
+    <h1>Do While Loop</h1>
 
     <script>
 
      /*
-        1.while loop adalah versi perulangan yang lebih sederhana dibandingkan for loop
-        2.Di while loop hanya terdapat kondisi perulangan, tanpa ada init statement dan post statement
+        1.do while adalah perulangan yang mirip dengan while
+        2.perbedaannya hanya pada pengecekan kondisi
+        3.kalau di while, kondisi dicek diawal sebelum perulangan, sedangkan do while dilakukan setelah perulangan dilakukan
+        4.oleh karna itu dalam do while, minimal pasti sekali perulangan dilakukan walupun kondisi tidak bernilai true
      */
 
      let counter =1;
 
-     while(counter <=10 ){
+     do{
          document.writeln(`<p>Perulangan Ke ${counter}</p>`);
          counter++;
-     }
+     } while (counter <=10);
     
     </script>
 </body>
