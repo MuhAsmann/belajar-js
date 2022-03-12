@@ -7,23 +7,25 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Do While Loop</h1>
+    <h1>Break</h1>
 
     <script>
 
      /*
-        1.do while adalah perulangan yang mirip dengan while
-        2.perbedaannya hanya pada pengecekan kondisi
-        3.kalau di while, kondisi dicek diawal sebelum perulangan, sedangkan do while dilakukan setelah perulangan dilakukan
-        4.oleh karna itu dalam do while, minimal pasti sekali perulangan dilakukan walupun kondisi tidak bernilai true
+        1.pada switch statement, kita sudah mengenal kata kunci break, yaitu untuk menghentikan case dalam switch
+        2.sama dengan pada perulangan, break juga digunakan untuk menghentikan seluruh perulangan
+        3. namun berbeda dengan continue, continue digunakan untuk menghentikan perlungan saat ini, lalu melanjutkan ke perulangan selanjutnya
      */
 
-     let counter =1;
-
-     do{
-         document.writeln(`<p>Perulangan Ke ${counter}</p>`);
+     let counter = 1;
+     while(true){
+         document.writeln(`<p>Perulangan Ke-${counter}</p>`);
          counter++;
-     } while (counter <=10);
+
+         if (counter > 10){
+             break;
+         }
+     }
     
     </script>
 </body>
