@@ -7,28 +7,37 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>For Of</h1>
+    <h1>With Statement</h1>
 
     <script>
 
      /*
-        1. jika for in digunakan utnuk melakukna iterasi property atau index, berbeda dengan for of, ini digunakan untuk melakukan iterasi terhadap isi value dari iterable object, seperti array, string, dan lain lain
-        2. for of tidak bisa digunakan untuk melakukan iterasi data di object, karna object bukanlah iterable
+        1. with statement merupakan fitur yang digunakan untuk menurunkan sebuah scope data
+        2. dengan menggunakan with statement, kita bisa mengakses property dalam sebuah data tanpa harus menyebut datanya
 
+        WITH STATEMENT TIDAK DIREKOMENDASIKAN
+        1. WALAUPUN MENARIK
+        2. DIKARNAKAN WITH STATEMEN KADANG MEMBUAT SEBUAH KODE MENJADI AMBIGU
      */
-
-     //contoh dalam array
-     const nama = ["Muhammad", "Asman", "S.kom"];
-     for (const index of nama) {
-        document.writeln(`<p>${index}</p>`);//Muhammad, Asman, S.kom
-
+    
+     //kode tanpa with statement
+     console.log("=========Kode Tanpa With Statement======");
+     const person ={
+         firstName : "Muhammad",
+         middleName : "Asman",
+         lastName : "S.Kom"
      }
 
+     console.log(person.firstName);
+     console.log(person.middleName);
+     console.log(person.lastName);
 
-     //contoh dalam string
-     const name = "Muhammad Asman S.Kom"
-     for (const property of name) {
-        document.writeln(`<p>${property}</p>`);//Muhammad, Asman, S.kom
+     //menggunakan with statement
+     console.log("=========Menggunakan With Statement======");
+     with(person){// sebenarnya tidak boleh digunakan untuk serakang
+        console.log(firstName);
+        console.log(middleName);
+        console.log(lastName);
      }
     </script>
 </body>
