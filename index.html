@@ -7,23 +7,28 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Continue</h1>
+    <h1>Label</h1>
 
     <script>
 
      /*
-        1.pada switch statement, kita sudah mengenal kata kunci break, yaitu untuk menghentikan case dalam switch
-        2.sama dengan pada perulangan, break juga digunakan untuk menghentikan seluruh perulangan
-        3. namun berbeda dengan continue, continue digunakan untuk menghentikan perlungan saat ini, lalu melanjutkan ke perulangan selanjutnya
+        1. label merupakan penanda yang bisa digunakan dengan kata kunci break dan countinue
+        2.secara default saat kita melakukan break dan continue, dia akan melakukan terhadap perulangan dimana kode break dan continue itu digunakan
+        3. dengan menggunakna label, kita bisa melakukan break dan continue terhadap perulangan yang kita inginkan, asalkan pada perulangannya kita gunakan label
+        4. untuk membuat label kita bisa gunakan nama label lalu diikuti dengan :(titik dua)
      */
+     loopi:
+        for(let i = 0; i < 10;i++){
+            loopj:
+                for (let j = 0; j < 100; j++){
+                    if(j > 10){
+                        //penggunaan label
+                        continue loopi;
+                    }
+                    console.info(`${i} - ${j}`);
+                }
+        }
 
-     for(let i = 1; i<=100; i++){
-         if(i % 2 === 0){
-             continue;
-         }
-         document.writeln(`<p>Perulangan Ganjil ke-${i}</p>`);
-     }
-    
     </script>
 </body>
 </html>
