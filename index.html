@@ -7,38 +7,25 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>With Statement</h1>
+    <h1>Function</h1>
 
     <script>
 
      /*
-        1. with statement merupakan fitur yang digunakan untuk menurunkan sebuah scope data
-        2. dengan menggunakan with statement, kita bisa mengakses property dalam sebuah data tanpa harus menyebut datanya
-
-        WITH STATEMENT TIDAK DIREKOMENDASIKAN
-        1. WALAUPUN MENARIK
-        2. DIKARNAKAN WITH STATEMEN KADANG MEMBUAT SEBUAH KODE MENJADI AMBIGU
+       1. Function adalah blok kode program yang akan berjalan saat kita panggil
+       2. untuk membuat membuat function, kita bisa menggunakan kata kunci function, lalu diikuti dengan nama function,kurung() dan diakhiri dengan block kurung{}
+       3. kita bisa memanggil function dengna nama function lalu diikuti dengan kurung()
+       4. dibahasa pemrog lain, function juga disebut dengan method
      */
     
-     //kode tanpa with statement
-     console.log("=========Kode Tanpa With Statement======");
-     const person ={
-         firstName : "Muhammad",
-         middleName : "Asman",
-         lastName : "S.Kom"
+     //Membuat Function
+     function sayHelloWorld(){
+         document.writeln("<p>Hello World</p>");
      }
 
-     console.log(person.firstName);
-     console.log(person.middleName);
-     console.log(person.lastName);
-
-     //menggunakan with statement
-     console.log("=========Menggunakan With Statement======");
-     with(person){// sebenarnya tidak boleh digunakan untuk serakang
-        console.log(firstName);
-        console.log(middleName);
-        console.log(lastName);
-     }
+     //pemanggilan function
+     sayHelloWorld();
+     sayHelloWorld();//bisa duplikat sebanyak mungkin
     </script>
 </body>
 </html>
