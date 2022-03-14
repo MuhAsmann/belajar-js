@@ -7,64 +7,29 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Function Return Value</h1>
+    <h1>Optional Parameter</h1>
 
     <script>
 
      /*
-        1. Secara default, function itu tidak menghasilkan value apapun, namun jika kita ingin, kita bisa membuat sebuah function mengembalikan value
-        2. agar function bisa menghasilkan value, kita bisa menggunakan kata kunci return didalam function nya
-        3. dan didalam block function, untuk menghasilkan nilai tersebut, kita harus menggunankan kata kunci return, lalu diikuti dengan data yang ingin kita hasilkan
-        4. function hanya bisa mengembalikan satu data. jika kita ingin mengembalikan beberapa data sekaligus, kita bisa memenggunakan array sebagai return valuenya
-
-        MENGHENTIKAN EKSEKUSI DENGAN RETURN
-        1. SAAT KITA MENGGUNAKAN KATA KUNCI RETURN, MAKA KODE SETELAH RETURN TIDAK AKAN DIEKSEKUSI
-        2. KITA BISA MENGGUNAKAN RETURN UNTUK MENGHENTIKAN EKSEKUSI SEBUAH FUNCTION
+        1. Secara default, parameter di function itu opsional(pilihan)
+        2. artinya kita tidak wajib mengisi valuenya ketika memanggil function
+        3. jika tidak ada value yang kita kirim ke parameter ketika memanggil function, maka secara otomatis parameter tersebut bernilai undefined
      */
 
-     //membuat function dengan parameter dan return value
-     function sayHello(firstName, lastName){
-         const say = `Hello ${firstName} ${lastName}`;
-         return say;
+     function sayHello(firstName, middleName, lastName) {
+         console.info(firstName);
+         console.info(middleName);
+         console.info(lastName);
      }
 
-     //memanggil function dan menangkap return valuenya
-     const result = sayHello("Muhammad", "Asman");
-     document.writeln(`<p>${result}</p>`);
-
-
-     //contoh kedua
-     function getFinalValue(value){
-         if(value > 90){
-             return "A";
-         }else if(value > 80){
-             return "B";
-         }else if(value > 70){
-             return "C";
-         }else if(value > 60){
-             return "D";
-         }else{
-             return "E";
-         }
-     }
-
-     const finalValue = getFinalValue(95);//disi dan akan mengisi parameter value di function diatas
-     document.writeln(`${finalValue}`);
-
-     //MENGHENTIKAN EKSEKUSI DENGAN RETURN
-     function isContains(array, searchValue){
-         for (const element of array){
-             if (element === searchValue){
-                 return `Ada ${searchValue}`;//bisa gunakan string ataupun boolean seperti false dibawah
-             }
-         }
-         return false;
-     }
-
-     const array =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-     const search = 10;
-     const found = isContains(array, search);
-     document.writeln(`<p>${found}</p>`);
+     sayHello();
+     console.info("Mengisi 1 parameter");
+     sayHello("Muhammad");
+     console.info("Mengisi 2 parameter");
+     sayHello("Muhammad", "Asman");
+     console.info("Mengisi 3(semua) parameter");
+     sayHello("Muhammad", "Asman", "S.kom");
     </script>
 </body>
 </html>
