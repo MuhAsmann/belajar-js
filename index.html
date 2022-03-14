@@ -7,29 +7,24 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Optional Parameter</h1>
+    <h1>Default Parameter</h1>
 
     <script>
 
      /*
-        1. Secara default, parameter di function itu opsional(pilihan)
-        2. artinya kita tidak wajib mengisi valuenya ketika memanggil function
-        3. jika tidak ada value yang kita kirim ke parameter ketika memanggil function, maka secara otomatis parameter tersebut bernilai undefined
+        1. sekarang kita tahu bahwa parameter itu optional, artinya kita bisa tidak memberti value terhadap parameter
+        2. parameter juga bisa kita beri default value, artinya jika ketika tidak mengirim data ke parameter atau kita mengirim data undefined, maka secara otomatis parameter akan diisi oleh defaul value
      */
 
-     function sayHello(firstName, middleName, lastName) {
-         console.info(firstName);
-         console.info(middleName);
-         console.info(lastName);
+     function register(name, gender = "UNKNOWN") {
+         console.log(name);
+         console.log(gender);
      }
-
-     sayHello();
-     console.info("Mengisi 1 parameter");
-     sayHello("Muhammad");
-     console.info("Mengisi 2 parameter");
-     sayHello("Muhammad", "Asman");
-     console.info("Mengisi 3(semua) parameter");
-     sayHello("Muhammad", "Asman", "S.kom");
+     register();
+     register("Asman");
+     register("Asman", "Pria");
+     register("Asman", undefined);
+     register("Asman", null);//null karna hanya kosong saja
     </script>
 </body>
 </html>
