@@ -7,24 +7,40 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Default Parameter</h1>
+    <h1>Rest Parameter</h1>
 
     <script>
 
      /*
-        1. sekarang kita tahu bahwa parameter itu optional, artinya kita bisa tidak memberti value terhadap parameter
-        2. parameter juga bisa kita beri default value, artinya jika ketika tidak mengirim data ke parameter atau kita mengirim data undefined, maka secara otomatis parameter akan diisi oleh defaul value
+        1. rest parameter adalah fitur dimana kita bisa mengirim data sebanyak-banyaknya pada satu parameter, dan akan secara otomatis dikonversi menjadi array
+        2. untuk membuat rest parameter, ada ketentuannya
+        3. rest parameter hanya boleh ada satu di dalam function, tidak boleh lebih dari satu
+        4. rest parameter hanya boleh berada di posisi paling akhir, tidak boleh di depan atau ditengah, kecuali memang cuma ada 1 parameter
+        5. dibahasa pemrograman lain, ada juga yang bilang ini adalah variable argument
+
+        spread syntax
+        1. kadang kita terlanjur memiliki data berupa array
+        2. tapi untungnya kita juga bisa mengirim array ke rest parameter
+        3. kita bisa gunakan ...(titik tiga kali) diikuti dengan array nya ketika memanggil function
+        4. ini disebut spread syntax
      */
 
-     function register(name, gender = "UNKNOWN") {
-         console.log(name);
-         console.log(gender);
+     function sum(name, ...data) {
+         let total = 0;
+         for(const item of data){
+             total += item;
+         }
+         document.writeln(`<p>Total ${name} is ${total}</p>`);
      }
-     register();
-     register("Asman");
-     register("Asman", "Pria");
-     register("Asman", undefined);
-     register("Asman", null);//null karna hanya kosong saja
+
+     sum("Orance", 2,3,4,6,7,8);
+     sum("yeay", 2,3,4,6,9,7,8);
+     sum("huhu", 2,3,4,6,7,99,8);
+
+     const value = [10, 10, 10, 10, 90];
+     sum("data", value);//gagal atau tidak error
+     //caranya menggunakan spread syntax
+     sum("Apple", ...value);
     </script>
 </body>
 </html>
