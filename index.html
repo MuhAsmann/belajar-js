@@ -7,28 +7,65 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Function Dalam Function</h1>
+    <h1>Scope</h1>
 
     <script>
 
      /*
-      1. tidak ada batasan dimana kita bisa membuat function
-      2. termasuk jika kita ingin membuat function didalam sebuah function, kita bisa melakukannya
-      3. function yang terdapat didalam, kita sebut inner function
-      4. inner function hanya bisa diakses ditempat kita membuat functionnya, tidak bisa diakses dari luar function nya
+      1. scope merupakan area akses sebuah data
+      2. ada dua jenis scope, global scope dan local scope
+      3. setiap kita membuat function, maka kita akan membuat local scope untuk function tersebut
+      4. data di global scope bisa diakses dari local scope. namun data dilocal scope hanya bisa diakses di local scope tersebut atau di scope local dibawahnya(dalam kasus function dalam function)
      */
 
-     function outer() {
-         function inner() {
-             document.writeln(`<p>Inner</p>`);
-         }
+     //global scope, atau bisa diakses dari manapun
+     let counter = 0;
 
-         inner();//hanya bisa diakses didalam function terluarnya
-         inner()
+     //global scope
+     function hitMe() {
+         //local scope hitMe
+         counter++;
      }
 
-     outer();
-    //  inner();//erorr karna diluar function terluarnya
+     //global scope
+     function other(){
+         //local scope other
+     }
+
+     hitMe();//counter +1 = 1
+     hitMe();//counter +1 = 2
+
+     console.info(counter);
+
+     //coba
+
+     function first() {
+         //local scope first
+         let firstVar = "First";//tidak bisa diakses di luar scope
+     }
+
+     function second() {
+         //local scope second
+         let secondVar = "Second";//tidak bisa diakses di luar scope
+     }
+
+     first();//menjalankan fungsi
+     second();
+
+    //  console.info(firstVar);//eror karna berada diluar local scope
+    //  console.info(secondVar);//eror
+
+     //nested function scope
+
+     function test() {
+         let testVar = "First";
+         function test2() {
+             console.info(testVar);
+         }
+         test2();//tidak bisa diakses diluar dari scope test
+     }
+    
+     test();
     </script>
 </body>
 </html>
