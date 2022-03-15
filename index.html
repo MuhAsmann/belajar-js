@@ -7,34 +7,28 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Anonymous Function</h1>
+    <h1>Function Dalam Function</h1>
 
     <script>
 
      /*
-      1. Sebelumnya kita selalu membuat function dengan nama
-      2. kita juga bisa membuat function tanpa nama functionnya, atau istilahnya adalah anonumous function
-      3. kita bisa buat anonymous function dalam sebuah variable atau bisa juga kita buat ketika mengisi parameter
+      1. tidak ada batasan dimana kita bisa membuat function
+      2. termasuk jika kita ingin membuat function didalam sebuah function, kita bisa melakukannya
+      3. function yang terdapat didalam, kita sebut inner function
+      4. inner function hanya bisa diakses ditempat kita membuat functionnya, tidak bisa diakses dari luar function nya
      */
 
-     //menyimpan dalam variable
-     let say = function(name) {
-        document.writeln(`<p>Haloo ${name}</p>`);         
+     function outer() {
+         function inner() {
+             document.writeln(`<p>Inner</p>`);
+         }
+
+         inner();//hanya bisa diakses didalam function terluarnya
+         inner()
      }
 
-     say("Asman");
-     say("haha");
-
-     //menyimpan dalam parameter
-     function giveMeName(callback) {
-         callback("Asman");
-
-     }
-     giveMeName(say);
-
-     giveMeName(function(name) {
-        document.writeln(`<p>Haii ${name}</p>`);  
-     });// jika ada dua parameter tinggal tambah ,(koma) setelah }
+     outer();
+    //  inner();//erorr karna diluar function terluarnya
     </script>
 </body>
 </html>
