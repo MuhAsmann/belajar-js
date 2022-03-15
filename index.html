@@ -7,32 +7,34 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Function Sebagai Value</h1>
+    <h1>Anonymous Function</h1>
 
     <script>
 
      /*
-      1. functrion tidak hanya bisa digunakan sebagai kode program yang dieksekusi, tapi bisa juga sebagai value
-      2. artinya function bisa disimpan di variable, bisa juga dikirim melalui parameter ke function lainnya
+      1. Sebelumnya kita selalu membuat function dengan nama
+      2. kita juga bisa membuat function tanpa nama functionnya, atau istilahnya adalah anonumous function
+      3. kita bisa buat anonymous function dalam sebuah variable atau bisa juga kita buat ketika mengisi parameter
      */
 
-     function sayHello(name) {
-         document.writeln(`<p>hello ${name}</p>`);
+     //menyimpan dalam variable
+     let say = function(name) {
+        document.writeln(`<p>Haloo ${name}</p>`);         
      }
 
-     let say = sayHello;//memasukan function kedalam variable tidak perlu pake ()
+     say("Asman");
+     say("haha");
 
-     sayHello("asman");//menggunakan function
-     say("aku");//menggunakan variable
+     //menyimpan dalam parameter
+     function giveMeName(callback) {
+         callback("Asman");
 
+     }
+     giveMeName(say);
 
-     //function di parameter
-     function givemeName(callback){
-         callback("Asman");//sayHello("Asman");
-     };
-
-     givemeName(sayHello);
-     givemeName(say);// givemeName(sayHello);
+     giveMeName(function(name) {
+        document.writeln(`<p>Haii ${name}</p>`);  
+     });// jika ada dua parameter tinggal tambah ,(koma) setelah }
     </script>
 </body>
 </html>
