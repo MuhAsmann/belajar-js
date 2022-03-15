@@ -7,40 +7,32 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Rest Parameter</h1>
+    <h1>Function Sebagai Value</h1>
 
     <script>
 
      /*
-        1. rest parameter adalah fitur dimana kita bisa mengirim data sebanyak-banyaknya pada satu parameter, dan akan secara otomatis dikonversi menjadi array
-        2. untuk membuat rest parameter, ada ketentuannya
-        3. rest parameter hanya boleh ada satu di dalam function, tidak boleh lebih dari satu
-        4. rest parameter hanya boleh berada di posisi paling akhir, tidak boleh di depan atau ditengah, kecuali memang cuma ada 1 parameter
-        5. dibahasa pemrograman lain, ada juga yang bilang ini adalah variable argument
-
-        spread syntax
-        1. kadang kita terlanjur memiliki data berupa array
-        2. tapi untungnya kita juga bisa mengirim array ke rest parameter
-        3. kita bisa gunakan ...(titik tiga kali) diikuti dengan array nya ketika memanggil function
-        4. ini disebut spread syntax
+      1. functrion tidak hanya bisa digunakan sebagai kode program yang dieksekusi, tapi bisa juga sebagai value
+      2. artinya function bisa disimpan di variable, bisa juga dikirim melalui parameter ke function lainnya
      */
 
-     function sum(name, ...data) {
-         let total = 0;
-         for(const item of data){
-             total += item;
-         }
-         document.writeln(`<p>Total ${name} is ${total}</p>`);
+     function sayHello(name) {
+         document.writeln(`<p>hello ${name}</p>`);
      }
 
-     sum("Orance", 2,3,4,6,7,8);
-     sum("yeay", 2,3,4,6,9,7,8);
-     sum("huhu", 2,3,4,6,7,99,8);
+     let say = sayHello;//memasukan function kedalam variable tidak perlu pake ()
 
-     const value = [10, 10, 10, 10, 90];
-     sum("data", value);//gagal atau tidak error
-     //caranya menggunakan spread syntax
-     sum("Apple", ...value);
+     sayHello("asman");//menggunakan function
+     say("aku");//menggunakan variable
+
+
+     //function di parameter
+     function givemeName(callback){
+         callback("Asman");//sayHello("Asman");
+     };
+
+     givemeName(sayHello);
+     givemeName(say);// givemeName(sayHello);
     </script>
 </body>
 </html>
