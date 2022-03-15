@@ -7,65 +7,36 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Scope</h1>
+    <h1>Konsep Recursive Function</h1>
 
     <script>
 
      /*
-      1. scope merupakan area akses sebuah data
-      2. ada dua jenis scope, global scope dan local scope
-      3. setiap kita membuat function, maka kita akan membuat local scope untuk function tersebut
-      4. data di global scope bisa diakses dari local scope. namun data dilocal scope hanya bisa diakses di local scope tersebut atau di scope local dibawahnya(dalam kasus function dalam function)
+      1. recursive function adalh kemampuan function memanggil functioannya sendiri
+      2. kadang memang ada banyak problem, yang lebih mudah diselesaikan menggunakan recursive function, seperti contohnya kasus factorial
      */
 
-     //global scope, atau bisa diakses dari manapun
-     let counter = 0;
-
-     //global scope
-     function hitMe() {
-         //local scope hitMe
-         counter++;
-     }
-
-     //global scope
-     function other(){
-         //local scope other
-     }
-
-     hitMe();//counter +1 = 1
-     hitMe();//counter +1 = 2
-
-     console.info(counter);
-
-     //coba
-
-     function first() {
-         //local scope first
-         let firstVar = "First";//tidak bisa diakses di luar scope
-     }
-
-     function second() {
-         //local scope second
-         let secondVar = "Second";//tidak bisa diakses di luar scope
-     }
-
-     first();//menjalankan fungsi
-     second();
-
-    //  console.info(firstVar);//eror karna berada diluar local scope
-    //  console.info(secondVar);//eror
-
-     //nested function scope
-
-     function test() {
-         let testVar = "First";
-         function test2() {
-             console.info(testVar);
+     function factorial(value) {
+         let result = 1;
+         for(let i = 1; i <= value; i++){
+             result *= i;
          }
-         test2();//tidak bisa diakses diluar dari scope test
+         return result;
      }
-    
-     test();
+
+     console.info(factorial(5));
+     console.info(1 * 2 * 3 * 4 * 5);
+
+     //factorial recursive
+     function factorialRecursive(value) {
+         if (value === 1) {
+             return 1;
+         }else{
+             return value * factorialRecursive(value - 1);
+         }
+     }
+     console.info(factorialRecursive(5));
+
     </script>
 </body>
 </html>
