@@ -7,32 +7,36 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Strict Mode</h1>
+    <h1>Debugger</h1>
 
     <script>
 
      /*
-      1. saat kita menjalankan kode program javascript, secara default kode program kita berjalan dalam mode tidak strict atau istilahnya sloppy mode
-      2. pada ECMAScript 5, diperkenalkan mode strict, dimana kita strict mode dijalankan maka akan merubah beberapa cara kerja di javascript seperti
-        - merubah beberapa js eror dari yang tadinya silent error, menjadi throw error(terlihat)
-        - memperbaiki beberapa kesalahan engine js untuk optimisasi
-        - menolak beberapa kode perintah yang kedepannya akan digunakan di ECMAScript
-     3. cara menjalankan adalah dengan menambahkan 'use strict' pada baris awal file javascript
-     4. atau bisa juga ditambahkan di awal function kita(kalau di html)
+      1. Debugger digunakan untuk melakukan proses debugging
+      2. debugging adalah proses mencari bug(masalah) yang biasa terjadi di kode program kita
+      3. dengan debugger kita bisa menghentikan kode program di posisi yang kita inginkan(breakpoint), lalu melihat semua isi variable yang ada pada saat kode program sedang terhenti
      */
 
-     function useStrictMode() {
-         'use strict';
-         const person ={
-             firstName:"Muhammad",
-         }
 
-         //error
-         with(person){
-             console.info(firstName);
-         }
+     function createFullName(firstName, middleName, lastName) {
+         
+         const fullName = `${firstName} ${middleName} ${lastName}`;
+         return fullName;
      }
 
+     const name = createFullName("Muhamamad", "Asman", "S.kom");
+     console.info(name);
+
+     function sum(...number) {
+        debugger;
+         let total = 0;
+         for (const number of numbers) {
+             total += number;
+         }
+         return total;
+     }
+
+     console.info(sum(1,1,1,1,1));
     </script>
 </body>
 </html>
