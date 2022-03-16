@@ -7,41 +7,27 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Kata Kunci This</h1>
+    <h1>Arrow Function DI object</h1>
 
     <script>
 
      /*
-      1. kata kunci this adalah referensi ke object milik siapa
-      2. tiap lokasi kata kunci this, bisa berbeda-beda referesnsi pemiliknya
-      3. dalam object method, this merupakan referensi ke object pemilik functionnya
-      4. di global scope, this merupakan referensi ke global object(di browser biasanya window)
-      5. dalam function, this merupakan referensi ke global object(di browser biasanya window)
-      6. di function dengan strict mode, this adalah undefined
-      7. dalam event, this merupakan referensi ke element yang menerima event
+      1. arrow function juga bisa kita gunakan sebagai object method
+      2. namun perlu diketahui, arrow function tidak bisa digunakan untuk mengakses arguments object, function generator, kata kunci this dan kata kunci super
+      3. jadi pastikan gunakan arrow function hanya memang ketika tidak butuh fitur fitur diatas
      */
  
-     console.info(this);//window
-
-     function sample() {
-         console.info(this);
-
-         function inner() {
-             console.info(this);
-         }
-
-         inner();
-     }
-     sample();
-
-     const person ={
+     const person = {
          name : "Muhammad",
-         sayHello: function (name) {
-             //dengan menggunakan this.propertnya kita bisa mengakses value yang didalam object property karna kita tahu bahwa this disini mengacu pada variable person bukan window lagi
-             console.info(`Hello ${name} my name is ${this.name}`);
+         //jika menggunakan arrow function tidak bisa gunakan this dll
+         sayHello : (name) => { 
+             console.info(`Hello ${name}`);
+             
          }
      }
-     person.sayHello("asman");
+
+     person.sayHello("Asman");
+     console.info(person.name);// akses name property
     </script>
 </body>
 </html>
