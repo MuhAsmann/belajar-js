@@ -7,17 +7,41 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Closure</h1>
+    <h1>Object Method</h1>
 
     <script>
 
      /*
-      1. closure adalah kombinasi function dan bundel referensi ke data disekitarnya
-      2. kita sudah tahu bahwa local scope tidak bisa diakses diluar scopenya
-      3. dengan kemampuan closure, kita bisa membuat sebuah function dilocal scope dan referensi ke data disekitar local scope tersebut, keluar scopenya
+      1. pada tipe data object, kitasudah membahas tentang property di object
+      2. karena sebenarnya function juga merupakan salah satu tipe data, jadi function pun sebenarnya bisa ditambahkan sebagai property di object
+      3. cara pembuatannya pun sama dengan function sebagai value
+      4. function di object kadang disebut juga sebagai object method
      */
+ 
+     const person = {
+        name : "Asman",
+        sayHello : function (name) {//bisa juga masukan langsung functionnya tanpa harus buat function didalam object tanpa menggunakan ()
+            console.info(`hello ${name}`);
+        }
+     };
 
-    //diskip dulu
+     //mengakses function di object
+     person.sayHello("asman");
+
+
+     //MENAMBAH METHOD/FUNCTION KEDALAM OBJECT
+
+     const orang = {
+         nama  : "asman",
+     };
+
+     //memasukan atau menbamah method kedalam object
+     orang.sayHai = function(name) {
+         console.info(`Haii ${name}`);
+     }
+
+     //memanggil function yang didalam object
+     orang.sayHai("Asman");
     </script>
 </body>
 </html>
