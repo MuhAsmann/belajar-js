@@ -7,27 +7,38 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Arrow Function DI object</h1>
+    <h1>Getter dan Setter</h1>
 
     <script>
 
      /*
-      1. arrow function juga bisa kita gunakan sebagai object method
-      2. namun perlu diketahui, arrow function tidak bisa digunakan untuk mengakses arguments object, function generator, kata kunci this dan kata kunci super
-      3. jadi pastikan gunakan arrow function hanya memang ketika tidak butuh fitur fitur diatas
+        1. getter dan setter adalah kemampuan membuat function yang berbeda untuk mengambil data(getter) dan mengubah data(setter) pada sebuah property di object
+        2. dengan menggunakan getter dan setter, kita bisa melakukan hal apapun dalam function seblum sebuah property diakses atau diubah, misal menambah validasi dan lain lain
      */
- 
-     const person = {
-         name : "Muhammad",
-         //jika menggunakan arrow function tidak bisa gunakan this dll
-         sayHello : (name) => { 
-             console.info(`Hello ${name}`);
-             
+     // GETTER
+     const person ={
+         firstName : "Muhammad",
+         lastName : "Asman",
+         get fullName (){
+             return `${this.firstName} ${this.lastName}`;
+         },
+         //buat setter, dengan tujuan tanpa kita merubah firstname dan lastname, dengan langsung merubah fullname
+         set fullName(value){
+             const array = value.split(" ");
+             this.firstName = array[0];
+             this.lastName = array[1];
          }
      }
 
-     person.sayHello("Asman");
-     console.info(person.name);// akses name property
+     //mencoba merubah isi property
+     person.firstName = "hahaha";// data berubah
+     //otomatis memanggil get full name layaknya properti biasa
+     console.info(person.fullName);
+
+     person.fullName = "Muhammad Asman";
+     console.table(person);
+
+
     </script>
 </body>
 </html>
