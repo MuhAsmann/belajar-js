@@ -7,72 +7,17 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Arrow Function</h1>
+    <h1>Closure</h1>
 
     <script>
 
      /*
-      1. Arrow functioan adlah alternatif pembuatan function yang lebih sederhana dari function biasanya
-      2. namun terdapat limitasi dan juga tidak bisa digunakan di semua situasi
-      3. dinamakan arrow function karena menggunakan tanda => (seperti anak panah)
-      4. berikut contoh beberapa kekurangan arrow function
-        - tidak memiliki fitur aruguments object
-        - tidak bisa menggunanakan function generator
-        - tidak bisa mengakses this
-        - tidak bisa mengakses super
-
-     ARROW TANPA BLOCK{}
-     1. JIKA SEBUAH ARROW FUNCTION ISINYA SEDERHANA, MISAL HANYA SATU BARIS
-     2. KITA BISA MEMBUAT ARROW FUNCTION TANPA HARUS MENGGUNAKAN BLOCK
-
-     ARROW FUNCTION RETURN VALUE
-     1. ARROW FUNCTION BISA MENGEMBALIKAN VALUE, SAMA SEPERTI FUNCTION BIASANYA
-     2. JIKA MENGGUNAKAN BLOCK, MAKA KITA PERLU MENGGUNAKAN KATA KUNCI RETURN
-     3. JIKA TIDAK MENGGUNAKAN BLOCK, KITA TIDAK PERLU MENGGUNAKAN KATA KUNCI RETURN 
-
-     ARROW FUNCTION TANPA KURUNG()
-     1. JIKA PARAMETER DI ARROW FUNCTION HANYA SATU, KITA BISA TIDAK MENGGUNAKAN KURUNG PADA PARAMETER
-
-     ARROW FUNCTION SEBAGAI PARAMETER
+      1. closure adalah kombinasi function dan bundel referensi ke data disekitarnya
+      2. kita sudah tahu bahwa local scope tidak bisa diakses diluar scopenya
+      3. dengan kemampuan closure, kita bisa membuat sebuah function dilocal scope dan referensi ke data disekitar local scope tersebut, keluar scopenya
      */
 
-     const sayHello = (name) => {
-         const say = `Hello ${name}`;
-         console.info(say);
-     }
-
-     sayHello("Asman");
-
-     //arrow function tanpa {}/block
-     const hello = (nama) => console.info(`hello ${nama}`);
-     hello("Asman");
-
-     //ARROW FUNCTION RETURN VALUE
-     //tanpa block
-     const sum = (first, second) => first + second;
-     console.info(sum(100, 100));
-
-     //mengunakan block
-     const hitung = (first, second) => {
-         return first + second;
-     }
-     console.info(hitung(1001, 100));
-
-     //ARROW FUNCTION TANPA KURUNG()
-     const hai = name => console.info(`Haii ${name}`);
-     hai("asman");
-
-     //ARROW FUNCTION SEBAGAI PARAMETER
-     function giveMeName(callback) {
-         callback("Asman");
-     }
-     //anonymous function
-     giveMeName(function(name) {
-         console.info(`Hello ${name}`);
-     });
-
-     //arrow function
-     giveMeName((name) => console.info(`hello ${name}`));
+    //diskip dulu
     </script>
 </body>
 </html>
