@@ -7,36 +7,46 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Konsep Recursive Function</h1>
+    <h1>Function Generator</h1>
 
     <script>
 
      /*
-      1. recursive function adalh kemampuan function memanggil functioannya sendiri
-      2. kadang memang ada banyak problem, yang lebih mudah diselesaikan menggunakan recursive function, seperti contohnya kasus factorial
+      1. function generator adalah function yang digunakan untuk membuat data generator
+      2. generator adalah data yang bisa di interasi seperti array
+      3. untuk membuat function generator, kita perlu menggunakan tanda *(bintang) setelah kata function
+      4. dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya
+
+      LAZY EVALUATION
+      1. GENERATOR ITU SIFATNYA LAZY
+      2. JADI ARTINYA DATANYA BELUM KITA AMBIL DARI GENERATOR MAKA YIELD SELANJUTNYA TIDAK AKAN DIEKSEKUSI
      */
 
-     function factorial(value) {
-         let result = 1;
-         for(let i = 1; i <= value; i++){
-             result *= i;
-         }
-         return result;
+     //menggunakan tanda bintang
+     function* createNames() {
+         yield "Muhammad";//mengembalikan nilai
+         yield "Asman";
+         yield "S.kom";
      }
 
-     console.info(factorial(5));
-     console.info(1 * 2 * 3 * 4 * 5);
+     const names = createNames();
+     for (const name of names) {
+         console.info(name);
+     }
 
-     //factorial recursive
-     function factorialRecursive(value) {
-         if (value === 1) {
-             return 1;
-         }else{
-             return value * factorialRecursive(value - 1);
+     //contoh membuat generator mengeluarkan nilai ganjil
+     function* buatGanjil(value) {
+         for (let i = 1; i <= value; i++) {
+            if (i % 2 === 1){
+                yield i;
+            }
          }
      }
-     console.info(factorialRecursive(5));
 
+     const numbers =buatGanjil(100);
+     for (const number of numbers) {
+         console.info(number);
+     }
     </script>
 </body>
 </html>
