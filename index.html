@@ -7,136 +7,30 @@
     <title>Mencoba Js</title>
 </head>
 <body>
-    <h1>Destructuring</h1>
+    <h1>Strict Mode</h1>
 
     <script>
 
      /*
-      1. Destructuring adalah fitur yang bisa digunakan untuk membongkar value-value di array atau object ke dalam variable-variable
-      2. fitur ini sangat mempermudah kita ketika ingin mengambil data dari array atau object tanpa harus melakukan pengambilan data satu per satu
-
-      DESTRUCTURING FUNCTION PARAMETER
-      1. DESTRUCTURING TIDAK HANYA BISA DILAKUKAN DI VARIABLE, TAPI JUGA BISA DILAKUKAN DI FUNCTION PARAMETER
-      2. HAL INI MEMBUAT KITA MUDAH KETIKA INGIN MENGAMBIL NESTED DATA DALAM ARRAY ATAU OBJECT DALAM FUNCTION
-
-      DAFAULT VALUE
-      1. GIMANA KALAU MISALNYA KITA MELAKUKAN DEST TAPI DATANYA TIDAK ADA
-      2. YANG PALING MENARIK DI DEST ADALAH, KITA BISA MENAMBAHKAN DEFAULT VALUE
-      3. JADI MISAL KITA MELAKUKAN DEST TERHADAP ARRAY TERNYATA TIDAK ADA DATANYA, MAKA KITA BISA MENAMBAHKAN DEFAULT VALUE
-      4. BEGITU JUGA PADA OBJECT, JIKA TERNYATA PROPERTYNYA TIDAK ADA, MAKA KITA BISA MENAMBAHKAN DEFAULT VALUE
+      1. saat kita menjalankan kode program javascript, secara default kode program kita berjalan dalam mode tidak strict atau istilahnya sloppy mode
+      2. pada ECMAScript 5, diperkenalkan mode strict, dimana kita strict mode dijalankan maka akan merubah beberapa cara kerja di javascript seperti
+        - merubah beberapa js eror dari yang tadinya silent error, menjadi throw error(terlihat)
+        - memperbaiki beberapa kesalahan engine js untuk optimisasi
+        - menolak beberapa kode perintah yang kedepannya akan digunakan di ECMAScript
+     3. cara menjalankan adalah dengan menambahkan 'use strict' pada baris awal file javascript
+     4. atau bisa juga ditambahkan di awal function kita(kalau di html)
      */
 
-     {
-         //contoh ambil data secara manual dari array
-     const name = ["Muhammad","Asman","S.kom","insyaallah", "cepat"];
-    //  const firstName = name[0];
-    //  const middleName = name[1];
-    //  const lastName = name[2];
-
-    //contoh destructuring array, tanpa membuat sebuah variable manual seperti diatas, walaupun dibawah juga manual
-    const [firstName, middleName, lastName, ...namaVariable] = name;
-
-     console.info(firstName);
-     console.info(middleName);
-     console.info(lastName);
-     console.info(namaVariable);
-     }
-
-     //contoh pada object
-     {
-        const person = {
-         firstName : "Muhammad",
-         lastName : "Asman",
-         addres : {
-             street :"Jalan belum ada",
-             city : "jogja",
-             country : "indonesia",
-             
-         },
-         hobby : "Jalan jalan",
-         channel : "Cakap Design",
-
-        };
-        let{firstName, lastName, addres:{street, city, country}, ...others} = person;
-        console.info(firstName);
-        console.info(lastName);
-        console.info(street);
-        console.info(city);
-        console.info(country);
-        console.info(others);
-     }
-
-     //contoh dalam function
-     {
-         function displayPerson({firstName, middleName, lastName}) {
-             console.info(firstName);
-             console.info(middleName);
-             console.info(lastName);
-         };
-
+     function useStrictMode() {
+         'use strict';
          const person ={
-             firstName : "Muhammad",
-             middleName : "Asman",
-             lastName : "S.kom",
-         };
-         //menggunakan function dengan isi parameter variable person
-         displayPerson(person);
-     }
-
-     //terhadap array
-     {
-         //tanpa menggunakan destructuring
-        //  function  sum(array) {
-        //      return array[0] + array[1];
-        //  }
-        //menggunakan destructuring
-         function  sum([firstName, lastName]) {
-             return firstName + lastName;
+             firstName:"Muhammad",
          }
 
-         console.info(sum([1,1]));
-         console.info(sum([4,3]));
-     }
-
-     //DEFAULT VALUE
-     {
-        const name = ["Muhammad", "Asman"];
-        const[firstName = "Muhammad", middleName, lastName = "S.kom"] = name;
-
-        console.info(firstName);
-        console.info(middleName);
-        console.info(lastName);
-     }
-
-     { 
-        const person = {
-         firstName : "Muhammad",
-         middleName : "Asman",
-         lastName : "S.kom",
-
-        };
-        let{firstName, middleName ,lastName="Tidak Ada Gelar" } = person;
-        console.info(firstName);
-        console.info(middleName);
-        console.info(lastName);
-     
-     }
-     
-     //menggunakan variable lain
-     { 
-        const person = {
-         firstName : "Muhammad",
-         middleName : "Asman",
-         lastName : "S.kom",
-
-        };
-        let{firstName : namaDepan,
-            middleName : namaTengah,
-            lastName : namaBelakang ="Tidak Ada Gelar" } = person;
-        console.info(namaDepan);
-        console.info(namaTengah);
-        console.info(namaBelakang);
-     
+         //error
+         with(person){
+             console.info(firstName);
+         }
      }
 
     </script>
